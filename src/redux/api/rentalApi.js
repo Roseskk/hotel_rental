@@ -7,6 +7,7 @@ export const rentalApi = createApi({
     endpoints: (build) => ({
       getAllRooms: build.query({
           query: () => `rooms`,
+          refetchOnMountOrArgChange: true
       })
     })
 })
