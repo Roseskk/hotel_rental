@@ -26,6 +26,7 @@ const Hotels = () => {
     }, [hotelsFetching])
     console.log(hotels)
 
+
     return(
         <UserLayout>
             <div className={'w-full flex h-[100vh] px-[40px]'}>
@@ -67,16 +68,17 @@ const Hotels = () => {
                                         geometry={hotel.geometry}
                                         properties={{
                                             // hintContent: `${hotel.hotel_name}`,
-                                            iconCaption: `${hotel.hotel_name}`,
+                                            // iconCaption: `${hotel.hotel_name}`,
+                                            iconContent:`${hotel.hotel_name}`
                                             // ca: 'asdasd',
                                         }}
                                         options={
                                         {
-                                            // iconLayout: 'default#image',
-                                            iconContentLayout: `${hotel.hotel_name}`,
-                                            // iconImageHref: `${blueMark}`,
+                                            iconLayout: 'default#image',
+                                            iconImageHref: `${blueMark}`,
                                             // iconImageSize: [30, 42],
-                                            // iconImageOffset: [-3, -42]
+                                            // iconImageOffset: [-3, -42],
+                                            iconContentLayout: '<div>Hello world</div>',
                                             // preset: 'islands#circleIcon',
                                         }}
                                     />
