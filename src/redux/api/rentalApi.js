@@ -5,13 +5,17 @@ export const rentalApi = createApi({
     reducerPath: 'rentalApi',
     baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:3000/api'}),
     endpoints: (build) => ({
-      getAllRooms: build.query({
-          query: () => `rooms`,
-          refetchOnMountOrArgChange: true
-      })
+        getAllRooms: build.query({
+              query: () => `hotels`,
+              refetchOnMountOrArgChange: true
+        }),
+        getHotelsByPosition: build.query({
+            query: (position) => `hotels/:${position}`
+        })
     })
 })
 
 export const {
-    useGetAllRoomsQuery
+    useGetAllRoomsQuery,
+    useGetHotelsByPositionQuery
 } = rentalApi
