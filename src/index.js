@@ -34,25 +34,64 @@ createServer({
             hotel_id: 'msk1',
             position: 'Moscow',
             hotel_name: 'Four Seasons',
-            image: '',
-            price: '2000',
+            image: 'https://via.placeholder.com/600/92c952',
+            description: 'В нескольких шагах от Кремля и Красной площади, в Four Seasons Hotel Moscow, наследие истории идеально сочетается с современным дизайном. ',
+            price: '90000',
             coordinates: {longitude: 55.756623, latitude: 37.616403}
         })
         server.create("hotel", {
             hotel_id: 'msk2',
             position: 'Moscow',
             hotel_name: 'Metropol',
-            image: '',
-            price: '2000',
+            image: 'https://via.placeholder.com/600/92c952',
+            description: 'Отель Метрополь расположен на Театральном проезде в Москве. Рядом с отелем находятся станции метро Лубянка, Театральная и Площадь Революции. ',
+            price: '800',
             coordinates: {longitude: 55.758548, latitude: 37.621712}
         })
         server.create("hotel", {
             hotel_id: 'msk3',
             position: 'Moscow',
             hotel_name: 'Президент отель',
-            image: '',
-            price: '2000',
-            coordinates: {longitude: 55.737356, latitude: 37.613395}
+            image: 'https://via.placeholder.com/600/92c952',
+            description: '«Президент-Отель» - гостиница в центре Москвы, расположенная на живописном берегу Москва-реки. ',
+            price: '5000',
+            coordinates: {longitude: 55.737356, latitude: 37.813395}
+        })
+        server.create("hotel", {
+            hotel_id: 'msk5',
+            position: 'Moscow',
+            hotel_name: 'Мори',
+            image: 'https://via.placeholder.com/600/92c952',
+            description: 'Гостиница Мори',
+            price: '500',
+            coordinates: {longitude: 55.737390, latitude: 37.613395}
+        })
+        server.create("hotel", {
+            hotel_id: 'msk6',
+            position: 'Moscow',
+            hotel_name: 'Реакомп',
+            image: 'https://via.placeholder.com/600/92c952',
+            description: 'Гостиница которую мы заслужили',
+            price: '500',
+            coordinates: {longitude: 55.737391, latitude: 37.713395}
+        })
+        server.create("hotel", {
+            hotel_id: 'msk8',
+            position: 'Moscow',
+            hotel_name: 'Ивановка',
+            image: 'https://via.placeholder.com/600/92c952',
+            description: 'Гостиница которую мы заслужили',
+            price: '500',
+            coordinates: {longitude: 55.737315, latitude: 37.723395}
+        })
+        server.create("hotel", {
+            hotel_id: 'msk9',
+            position: 'Moscow',
+            hotel_name: 'Гостиница',
+            image: 'https://via.placeholder.com/600/92c952',
+            description: 'Гостиница которую мы заслужили',
+            price: '500',
+            coordinates: {longitude: 55.737327, latitude: 37.513395}
         })
     },
 })
