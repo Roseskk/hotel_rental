@@ -10,11 +10,7 @@ import {transform} from "../redux/slices/hotels";
 const Hotels = () => {
     const {position} = useParams()
     const {data: hotelsData, isSuccess: hotelsSuccess, isFetching: hotelsFetching} = useGetHotelsByPositionQuery(position)
-    // const [hotels, setHotels] = useState([])
     const dispatch = useDispatch()
-    // console.log(hotelsData?.hotels)
-    // const ymaps = useYMaps(['Map'])
-    // const mapRef = useRef(null);
 
     useEffect(() => {
         if (hotelsSuccess) {

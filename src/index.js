@@ -37,6 +37,7 @@ createServer({
             image: 'https://via.placeholder.com/600/92c952',
             description: 'В нескольких шагах от Кремля и Красной площади, в Four Seasons Hotel Moscow, наследие истории идеально сочетается с современным дизайном. ',
             price: '90000',
+            rate: 10,
             coordinates: {longitude: 55.756623, latitude: 37.616403}
         })
         server.create("hotel", {
@@ -46,6 +47,7 @@ createServer({
             image: 'https://via.placeholder.com/600/92c952',
             description: 'Отель Метрополь расположен на Театральном проезде в Москве. Рядом с отелем находятся станции метро Лубянка, Театральная и Площадь Революции. ',
             price: '800',
+            rate: 10,
             coordinates: {longitude: 55.758548, latitude: 37.621712}
         })
         server.create("hotel", {
@@ -55,6 +57,7 @@ createServer({
             image: 'https://via.placeholder.com/600/92c952',
             description: '«Президент-Отель» - гостиница в центре Москвы, расположенная на живописном берегу Москва-реки. ',
             price: '5000',
+            rate: 10,
             coordinates: {longitude: 55.737356, latitude: 37.813395}
         })
         server.create("hotel", {
@@ -64,6 +67,7 @@ createServer({
             image: 'https://via.placeholder.com/600/92c952',
             description: 'Гостиница Мори',
             price: '500',
+            rate: 10,
             coordinates: {longitude: 55.737390, latitude: 37.613395}
         })
         server.create("hotel", {
@@ -73,6 +77,7 @@ createServer({
             image: 'https://via.placeholder.com/600/92c952',
             description: 'Гостиница которую мы заслужили',
             price: '500',
+            rate: 10,
             coordinates: {longitude: 55.737391, latitude: 37.713395}
         })
         server.create("hotel", {
@@ -91,6 +96,7 @@ createServer({
             image: 'https://via.placeholder.com/600/92c952',
             description: 'Гостиница которую мы заслужили',
             price: '500',
+            rate: 10,
             coordinates: {longitude: 55.737327, latitude: 37.513395}
         })
     },
