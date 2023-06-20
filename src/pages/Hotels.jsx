@@ -18,12 +18,17 @@ const Hotels = () => {
         }
     }, [hotelsFetching])
 
+    const handleBalloonContainer = ({route, id}) => {
+        // route ?
+        // console.log(e.originalEvent.originalEvent.originalEvent.target._data.properties._data.route)
+    }
+
     return(
         <UserLayout>
             {
                 <div className={'w-full flex gap-[10px] h-[100vh] px-[40px]'}>
-                    <SideBar />
-                    <YandexMap />
+                    <SideBar balloonOpen={handleBalloonContainer} />
+                    <YandexMap balloonOpen={handleBalloonContainer} />
                 </div>
             }
         </UserLayout>

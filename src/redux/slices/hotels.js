@@ -4,13 +4,13 @@ export const hotelsSlice = createSlice({
     name: 'hotels',
     initialState: {
         hotels: [],
+        rooms: []
     },
     reducers: {
-        getHotel: (state) => {
-
+        setRooms: (state, action) => {
+            state.rooms = action.payload.hotelData
         },
         transform:(state,action) => {
-
             state.hotels = action.payload.hotelsData.hotels.map((hotel) => {
                 return {
                     ...hotel,
@@ -24,6 +24,6 @@ export const hotelsSlice = createSlice({
     },
 })
 
-export const { transform } = hotelsSlice.actions
+export const { transform, setRooms } = hotelsSlice.actions
 
 export default hotelsSlice.reducer

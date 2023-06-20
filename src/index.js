@@ -3,14 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
-import {createServer, Model} from "miragejs";
+import {belongsTo, createServer, hasMany, Model} from "miragejs";
 import {store} from "./redux/store";
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 
 createServer({
     models: {
-        hotel: Model,
+        hotel: Model.extend({
+            // hotel_id: belongsTo()
+        }),
+
+        room: Model.extend({
+            // hotel_id: belongsTo()
+        })
 
     },
 
@@ -27,15 +33,73 @@ createServer({
 
             return schema.hotels.where({position: position.slice(1,)})
         })
+
+        this.get("/rooms/:roomId", (schema, request) => {
+            let roomId = request.params.roomId
+            console.log(roomId)
+
+            return schema.rooms.where({ hotel_id: roomId.slice(1,)})
+        })
     },
 
     seeds(server) {
+        server.create("room", {
+            hotel_id: 'msk1',
+            rooms: [
+                {
+                    roomId: 1,
+                    isWifi: false,
+                    isClose: false,
+                    image: 'https://via.placeholder.com/600/92c952',
+                    cost: 3000,
+                    type: 'Люкс',
+                    description: 'Какой то текст'
+                },
+                {
+                    roomId: 2,
+                    isWifi: false,
+                    isClose: false,
+                    image: 'https://via.placeholder.com/600/92c952',
+                    type: 'Эконом',
+                    cost: 3000,
+                    description: 'Какой то текст'
+                },
+                {
+                    roomId: 3,
+                    isWifi: false,
+                    isClose: false,
+                    image: 'https://via.placeholder.com/600/92c952',
+                    type: 'Премиум',
+                    cost: 3000,
+                    description: 'Какой то текст'
+                },
+                {
+                    roomId: 4,
+                    isWifi: false,
+                    isClose: false,
+                    image: 'https://via.placeholder.com/600/92c952',
+                    type: 'Премиум',
+                    cost: 3000,
+                    description: 'Какой то текст'
+                },
+                {
+                    roomId: 5,
+                    isWifi: false,
+                    isClose: false,
+                    image: 'https://via.placeholder.com/600/92c952',
+                    type: 'Люкс',
+                    cost: 3000,
+                    description: 'Какой то текст'
+                },
+
+            ]
+        })
         server.create("hotel", {
             hotel_id: 'msk1',
             position: 'Moscow',
             hotel_name: 'Four Seasons',
             image: 'https://via.placeholder.com/600/92c952',
-            description: 'В нескольких шагах от Кремля и Красной площади, в Four Seasons Hotel Moscow, наследие истории идеально сочетается с современным дизайном. ',
+            description: 'В нескольких шагах от Кремля и Красной площади, в Four Seasons Rooms Moscow, наследие истории идеально сочетается с современным дизайном. ',
             price: '90000',
             rate: 10,
             coordinates: {longitude: 55.756623, latitude: 37.616403}
