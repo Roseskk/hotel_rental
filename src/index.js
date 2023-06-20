@@ -49,47 +49,62 @@ createServer({
                 {
                     roomId: 1,
                     isWifi: false,
-                    isClose: false,
+                    isReserved: false,
                     image: 'https://via.placeholder.com/600/92c952',
                     cost: 3000,
                     type: 'Люкс',
-                    description: 'Какой то текст'
+                    description: 'Какой то текст',
+                    dateFrom:'',
+                    dateTo:'',
+                    userId:''
                 },
                 {
                     roomId: 2,
                     isWifi: false,
-                    isClose: false,
+                    isReserved: false,
                     image: 'https://via.placeholder.com/600/92c952',
                     type: 'Эконом',
                     cost: 3000,
-                    description: 'Какой то текст'
+                    description: 'Какой то текст',
+                    dateFrom:'',
+                    dateTo:'',
+                    userId:''
                 },
                 {
                     roomId: 3,
                     isWifi: false,
-                    isClose: false,
+                    isReserved: false,
                     image: 'https://via.placeholder.com/600/92c952',
                     type: 'Премиум',
                     cost: 3000,
-                    description: 'Какой то текст'
+                    description: 'Какой то текст',
+                    dateFrom:'',
+                    dateTo:'',
+                    userId:''
                 },
                 {
                     roomId: 4,
                     isWifi: false,
-                    isClose: false,
+                    isReserved: false,
                     image: 'https://via.placeholder.com/600/92c952',
                     type: 'Премиум',
                     cost: 3000,
-                    description: 'Какой то текст'
+                    description: 'Какой то текст',
+                    dateFrom:'',
+                    dateTo:'',
+                    userId:''
                 },
                 {
                     roomId: 5,
                     isWifi: false,
-                    isClose: false,
+                    isReserved: false,
                     image: 'https://via.placeholder.com/600/92c952',
                     type: 'Люкс',
                     cost: 3000,
-                    description: 'Какой то текст'
+                    description: 'Какой то текст',
+                    dateFrom:'',
+                    dateTo:'',
+                    userId:''
                 },
 
             ]
