@@ -16,8 +16,9 @@ createServer({
 
         room: Model.extend({
             // hotel_id: belongsTo()
-        })
+        }),
 
+        comment: Model
     },
 
     routes() {
@@ -27,29 +28,66 @@ createServer({
             return schema.hotels.all()
         })
 
-
         this.get("/hotels/:position", (schema, request) => {
             let position = request.params.position
 
-            return schema.hotels.where({position: position.slice(1,)})
+            return schema.hotels.where({position: position})
         })
 
         this.get("/rooms/:roomId", (schema, request) => {
             let roomId = request.params.roomId
             console.log(roomId)
 
-            return schema.rooms.where({ hotel_id: roomId.slice(1,)})
+            return schema.rooms.where({ hotel_id: roomId})
+        })
+
+        this.get("/comments/:hotelId/:roomId", (schema, request) => {
+            let roomId = request.params.roomId
+            let hotelId = request.params.hotelId
+
+            console.log('21',roomId, hotelId)
+            return schema.comments.where({ hotel_id: hotelId, roomId: roomId})
         })
     },
 
     seeds(server) {
+        server.create("comment", {
+            hotel_id: 'msk1',
+            roomId: 1,
+            comments: [
+                {
+                    comment_id: 1,
+                    content: 'Номер просто ужас'
+                },
+                {
+                    comment_id: 2,
+                    content: 'Хороший сервис'
+                },
+                {
+                    comment_id: 3,
+                    content: 'Еда говно, сотовая связь не ловит'
+                },
+                {
+                    comment_id: 4,
+                    content: 'Кровать сломалась просто класс'
+                },
+            ]
+        })
         server.create("room", {
             hotel_id: 'msk1',
+            coordinates: {longitude: 55.756623, latitude: 37.616403},
             rooms: [
                 {
                     roomId: 1,
                     isWifi: false,
+                    isSmoking: false,
+                    isPool: false,
+                    isParking: false,
+                    isFitness: false,
                     isReserved: false,
+                    isSafe: false,
+                    isBathroom: false,
+                    isTv: false,
                     image: 'https://via.placeholder.com/600/92c952',
                     cost: 3000,
                     type: 'Люкс',
@@ -62,6 +100,13 @@ createServer({
                     roomId: 2,
                     isWifi: false,
                     isReserved: false,
+                    isSmoking: false,
+                    isPool: false,
+                    isParking: false,
+                    isFitness: false,
+                    isSafe: false,
+                    isBathroom: false,
+                    isTv: false,
                     image: 'https://via.placeholder.com/600/92c952',
                     type: 'Эконом',
                     cost: 3000,
@@ -74,6 +119,13 @@ createServer({
                     roomId: 3,
                     isWifi: false,
                     isReserved: false,
+                    isSmoking: false,
+                    isPool: false,
+                    isParking: false,
+                    isFitness: false,
+                    isSafe: false,
+                    isBathroom: false,
+                    isTv: false,
                     image: 'https://via.placeholder.com/600/92c952',
                     type: 'Премиум',
                     cost: 3000,
@@ -85,7 +137,14 @@ createServer({
                 {
                     roomId: 4,
                     isWifi: false,
+                    isSmoking: false,
+                    isPool: false,
+                    isParking: false,
+                    isFitness: false,
                     isReserved: false,
+                    isSafe: false,
+                    isBathroom: false,
+                    isTv: false,
                     image: 'https://via.placeholder.com/600/92c952',
                     type: 'Премиум',
                     cost: 3000,
@@ -97,7 +156,15 @@ createServer({
                 {
                     roomId: 5,
                     isWifi: false,
+                    isSmoking: false,
+                    isPool: false,
+                    isParking: false,
+                    isFitness: false,
                     isReserved: false,
+                    isSafe: false,
+                    isBathroom: false,
+                    isTv: false,
+
                     image: 'https://via.placeholder.com/600/92c952',
                     type: 'Люкс',
                     cost: 3000,
@@ -106,7 +173,6 @@ createServer({
                     dateTo:'',
                     userId:''
                 },
-
             ]
         })
         server.create("hotel", {

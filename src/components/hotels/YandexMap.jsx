@@ -2,7 +2,7 @@ import React from 'react';
 import {Clusterer, Map, Placemark, YMaps} from "@pbe/react-yandex-maps";
 import {useSelector} from "react-redux";
 
-const YandexMap = ({ref, balloonOpen}) => {
+const YandexMap = ({balloonOpen}) => {
     const hotels = useSelector((state) => state.hotels.hotels)
 
     return(

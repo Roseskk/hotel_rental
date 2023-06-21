@@ -6,8 +6,8 @@ export const roomsApi = createApi({
     baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:3000/api'}),
     endpoints: (build) => ({
         getRooms: build.query({
-            query: (roomId) => `rooms/:${roomId}`,
-            transformResponse: (res) => res.rooms[0].rooms
+            query: (roomId) => `rooms/${roomId}`,
+            transformResponse: (res) => res.rooms[0]
         }),
     })
 })

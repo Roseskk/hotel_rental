@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import UserLayout from "../layouts/UserLayout";
 import {useDispatch} from "react-redux";
-import Cards from "../components/hotel/Cards";
+import HotelsCards from "../components/hotel/cards/HotelsCards";
 import {useGetRoomsQuery} from "../redux/api/roomsApi";
 import {initialize} from "../redux/slices/rooms";
 
@@ -17,7 +17,7 @@ const Rooms = () => {
 
     return(
         <UserLayout>
-            <Cards />
+            <HotelsCards />
         </UserLayout>
     )
 }
