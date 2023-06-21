@@ -16,6 +16,7 @@ const HotelCardContent = ({coordinates, currentRoom, activeState}) => {
             dispatch(getComments({comments: commentsData}))
         }
     },[commentsFetching])
+
     // geometry: {
     //     type: 'Point',
     //         coordinates: [hotel?.coordinates?.longitude, hotel?.coordinates?.latitude]
