@@ -13,6 +13,7 @@ export const commentsApi = createApi({
                     method: 'GET'
                 }
             },
+            transformResponse: (res) => res.comments[0].comments
         })
     })
 })
