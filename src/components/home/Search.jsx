@@ -1,8 +1,9 @@
 import React from 'react';
 import Select from "react-select";
 import Input from "../ui/Input";
+import {Link} from "react-router-dom";
 
-const Search = (props) => {
+const Search = ({selectChange, position}) => {
     const customStyles = {
         // option: (defaultStyles, state) => ({
         //     ...defaultStyles,
@@ -26,6 +27,10 @@ const Search = (props) => {
         }),
         singleValue: (defaultStyles) => ({ ...defaultStyles, color: "#fff" }),
     };
+
+    const options = [
+        {value: 'Moscow', label: 'Москва'}
+    ]
     return(
         <section className={'w-full tablet:h-[500px] bg-secondary shadow-md font-primary text-default tablet:p-20'}>
             <div className={'tablet:flex tablet:flex-col gap-[20px] text-white justify-center items-center'}>
@@ -33,12 +38,14 @@ const Search = (props) => {
                 <div className={'flex bg-white w-[60%] p-[10px] rounded-[15px] gap-2'}>
                     <Select
                     placeholder={'Направление'}
-                    value={''}
+                    options={options}
+                    value={position}
                     styles={customStyles}
+                    onChange={(target) => selectChange(target)}
                     />
                     <Input className={' bg-secondary p-[15px] cursor-pointer'} type={'date'} label={'Дата Заезда'}  />
                     <Input className={' bg-secondary p-[15px] cursor-pointer '} type={'date'} label={'Дата Выезда'}  />
-                    <button className={'w-full text-black bg-secondary rounded-tr-[10px] rounded-br-[10px] hover:bg-primary transition duration-700 ease-in-out'}>Найти</button>
+                    <Link to={`/hotels/${position?.value}`} className={'w-full flex justify-center items-center text-black bg-secondary rounded-tr-[10px] rounded-br-[10px] hover:bg-primary transition duration-700 ease-in-out'}>Найти</Link>
                 </div>
             </div>
         </section>
