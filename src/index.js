@@ -183,7 +183,7 @@ createServer({
             hotel_id: 'msk1',
             position: 'Moscow',
             hotel_name: 'Four Seasons',
-            image: 'https://via.placeholder.com/600/92c952',
+            image: 'https://media.istockphoto.com/id/104731717/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%BA%D1%83%D1%80%D0%BE%D1%80%D1%82-%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B0-%D0%BB%D1%8E%D0%BA%D1%81.jpg?s=1024x1024&w=is&k=20&c=w_nXXgzj9s7Y0hvt7qmlP8A8A-J9kuxtWAxXL14MSjQ=',
             description: 'В нескольких шагах от Кремля и Красной площади, в Four Seasons Rooms Moscow, наследие истории идеально сочетается с современным дизайном. ',
             price: '90000',
             rate: 10,
