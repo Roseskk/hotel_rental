@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {useSelector} from "react-redux";
 import SideRight from "../aside/SideRight";
-import HotelCard from "./HotelCard";
-import HotelCardContent from "./HotelCardContent";
+import HotelCard from "../aside/HotelCard";
+import HotelCardContent from "../aside/HotelCardContent";
 
 const HotelsCards = () => {
     const rooms = useSelector((state) => state.rooms.rooms)
@@ -21,7 +21,6 @@ const HotelsCards = () => {
             setCurrentRoom(room)
         }
     }
-
     return(
         <div className={'relative'}>
             <h1 className={'text-center text-[33px] font-primary'}>Номера</h1>
@@ -30,7 +29,7 @@ const HotelsCards = () => {
                     rooms?.rooms?.length !== 0 &&
                     rooms?.rooms?.map(room => {
                         return(
-                            <HotelCard room={room} cardHandler={cardHandler} />
+                            <HotelCard key={room.roomId} room={room} cardHandler={cardHandler} />
                         )
                     })
                 }
