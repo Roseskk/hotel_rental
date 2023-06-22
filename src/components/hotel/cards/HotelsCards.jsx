@@ -21,6 +21,10 @@ const HotelsCards = () => {
             setCurrentRoom(room)
         }
     }
+
+    const onBack = () => {
+        setActive(!isActive)
+    }
     console.log(rooms)
     return(
         <div className={'relative'}>
@@ -40,7 +44,7 @@ const HotelsCards = () => {
                             }
                         </div>
                         <SideRight activeState={isActive} currentRoom={currentRoom} />
-                        <HotelCardContent coordinates={rooms?.coordinates} activeState={isActive} currentRoom={currentRoom}/>
+                        <HotelCardContent onBackClick={onBack} coordinates={rooms?.coordinates} activeState={isActive} currentRoom={currentRoom}/>
                     </>
             }
         </div>
