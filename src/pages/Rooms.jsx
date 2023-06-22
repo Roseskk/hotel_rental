@@ -5,10 +5,11 @@ import {useDispatch} from "react-redux";
 import HotelsCards from "../components/hotel/cards/HotelsCards";
 import {useGetRoomsQuery} from "../redux/api/roomsApi";
 import {initialize} from "../redux/slices/rooms";
+import Loader from "../components/ui/loader/Loader";
 
 const Rooms = () => {
     const {hotelId} = useParams()
-    const {data: hotelData, isSuccess: roomsSuccess, isFetching: roomsFetching} = useGetRoomsQuery(hotelId)
+    const {data: hotelData, isSuccess: roomsSuccess, isFetching: roomsFetching, isLoading: roomsLoading} = useGetRoomsQuery(hotelId)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -17,7 +18,11 @@ const Rooms = () => {
 
     return(
         <UserLayout>
-            <HotelsCards />
+            {
+                roomsLoading
+                ? <Loader />
+                : <HotelsCards />
+            }
         </UserLayout>
     )
 }

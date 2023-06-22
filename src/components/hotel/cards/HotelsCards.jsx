@@ -21,21 +21,28 @@ const HotelsCards = () => {
             setCurrentRoom(room)
         }
     }
+    console.log(rooms)
     return(
         <div className={'relative'}>
             <h1 className={'text-center text-[33px] font-primary'}>Номера</h1>
-            <div className={'flex flex-wrap p-[20px] w-full justify-between font-primary text-default h-[90vh] overflow-y-scroll rounded'}>
-                {
-                    rooms?.rooms?.length !== 0 &&
-                    rooms?.rooms?.map(room => {
-                        return(
-                            <HotelCard key={room.roomId} room={room} cardHandler={cardHandler} />
-                        )
-                    })
-                }
-            </div>
-            <SideRight activeState={isActive} currentRoom={currentRoom} />
-            <HotelCardContent coordinates={rooms?.coordinates} activeState={isActive} currentRoom={currentRoom}/>
+            {
+                rooms === undefined
+                    ? <div>Свободных номеров нет</div>
+                    : <>
+                        <div className={'flex flex-wrap p-[20px] w-full justify-between font-primary text-default h-[90vh] overflow-y-scroll rounded'}>
+                            {
+                                rooms?.rooms?.length !== 0 &&
+                                rooms?.rooms?.map(room => {
+                                    return(
+                                        <HotelCard key={room.roomId} room={room} cardHandler={cardHandler} />
+                                    )
+                                })
+                            }
+                        </div>
+                        <SideRight activeState={isActive} currentRoom={currentRoom} />
+                        <HotelCardContent coordinates={rooms?.coordinates} activeState={isActive} currentRoom={currentRoom}/>
+                    </>
+            }
         </div>
     )
 }
