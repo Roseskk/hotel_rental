@@ -14,6 +14,7 @@ module.exports = {
         },
         colors: {
             'primary': '#060504',
+            'secondary': '#dccbc1'
         },
         fontSize: {
           'title': '32px',
