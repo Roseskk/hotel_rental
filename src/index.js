@@ -40,6 +40,21 @@ createServer({
             return schema.rooms.where({ hotel_id: roomId})
         })
 
+        this.get("/rooms/:hotelId/:roomId",(schema, request) => {
+            let hotelId = request.params.hotelId
+            let roomId = request.params.roomId
+
+            const hotel = schema.rooms.where({hotel_id: hotelId})
+            const htl = hotel.models[0].rooms
+            const coordinates = hotel.models[0].coordinates
+            const room = htl.findIndex((i) => i.roomId === +roomId)
+
+            return {
+                coordinates: coordinates,
+                room: htl[room]
+            }
+        })
+
         this.get("/comments/:hotelId/:roomId", (schema, request) => {
             let roomId = request.params.roomId
             let hotelId = request.params.hotelId
