@@ -13,7 +13,7 @@ const SideRight = ({currentRoom, activeState}) => {
                 <h2 className={'text-title'}>Цена: {currentRoom?.cost}₽</h2>
             </div>
             <div className={'w-full'}>
-                <img className={'object-cover rounded-[15px]'} src={currentRoom?.image} />
+                <img className={'object-cover w-full h-auto rounded-[15px]'} src={currentRoom?.image} />
             </div>
             <h2 className={'text-title text-center'}>Удобства номера</h2>
             <div className={'flex flex-wrap justify-between'}>
