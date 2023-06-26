@@ -5,6 +5,7 @@ import {IoFitnessOutline} from "react-icons/io5";
 import {MdPool} from "react-icons/md";
 import {BsSafe2} from "react-icons/bs";
 import {useSelector} from "react-redux";
+import Button from "../../ui/form/Button";
 
 const SideRight = () => {
 
@@ -56,7 +57,7 @@ const SideRight = () => {
                     </div>
                 </div>
             </div>
-            <button className={'hover:bg-black bg-primary px-[30px] py-[20px] rounded-[15px] text-title text-secondary border border-black text-center'}>Забронировать</button>
+            <Button textSize={'text-title'} pxSize={`px-[30px]`} pySize={`py-[20px]`} value={'Забронировать'}/>
         </div>
     )
 }
