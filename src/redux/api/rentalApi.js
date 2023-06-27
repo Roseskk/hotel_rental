@@ -7,7 +7,13 @@ export const rentalApi = createApi({
 
     endpoints: (build) => ({
         getHotelsByPosition: build.query({
-            query: (position) => `hotels/${position}`
+            query: (arg) => {
+                const {position,dateFrom,dateTo} = arg
+                return {
+                    url: `hotels/${position}`,
+                    method: 'GET'
+                }
+            }
         })
     })
 })

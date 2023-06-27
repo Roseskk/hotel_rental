@@ -30,7 +30,9 @@ createServer({
 
         this.get("/hotels/:position", (schema, request) => {
             let position = request.params.position
-
+            const url = new URL(request.url)
+            const queryParams = new URLSearchParams(url.searchParams);
+            console.log(request)
             return schema.hotels.where({position: position})
         })
 
