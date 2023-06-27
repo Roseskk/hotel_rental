@@ -7,10 +7,13 @@ import YandexMap from "../components/hotels/YandexMap";
 import {useDispatch} from "react-redux";
 import {transform} from "../redux/slices/hotels";
 import Loader from "../components/ui/loader/Loader";
+import qs from "query-string";
 
-const Hotels = () => {
+const Hotels = (props) => {
     const {position} = useParams()
-    const {data: hotelsData, isSuccess: hotelsSuccess, isFetching: hotelsFetching, isLoading: hotelsLoading} = useGetHotelsByPositionQuery(position)
+    const params = qs.parse(props.location.search, {ignoreQueryPrefix: true})
+    // console.log(params)
+    const {data: hotelsData, isSuccess: hotelsSuccess, isFetching: hotelsFetching, isLoading: hotelsLoading} = useGetHotelsByPositionQuery({position: position})
     const dispatch = useDispatch()
 
     useEffect(() => {

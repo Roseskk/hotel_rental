@@ -7,23 +7,19 @@ import {useHistory} from "react-router-dom";
 const Home = (props)  =>{
     const history = useHistory()
     const [position, setPosition] = useState()
-    const [dateData, setDateData] = useState({
-        dateFrom: '',
-        dateTo: ''
-    })
+    const [dateData, setDateData] = useState([null,null])
 
     const handleSelect = (e) => {
         setPosition(e)
     }
 
-    const handleDateTime = (e) => {
-        setDateData({
-            [e.target.name]: e.target.value
-        })
+    const handleDateTime = (date) => {
+        setDateData(date)
     }
 
     const handleSearch = (e) => {
         e.preventDefault()
+        if (!position) alert('hi')
         position && history.push(`/hotels/${position?.value}`)
     }
 
