@@ -11,7 +11,8 @@ export const hotelsSlice = createSlice({
             state.rooms = action.payload.hotelData
         },
         transform:(state,action) => {
-            state.hotels = action.payload.hotelsData.hotels.map((hotel) => {
+            console.log(action.payload.hotelsData)
+            state.hotels = action.payload.hotelsData.map((hotel) => {
                 return {
                     ...hotel,
                     geometry: {

@@ -22,6 +22,12 @@ module.exports = (sequelize, Sequelize) => {
         coordinates: {
             type: DataTypes.JSON
         },
+        dateFrom: {
+            type: DataTypes.DATE
+        },
+        dateTo: {
+            type: DataTypes.DATE
+        }
     });
 
     return Hotel;
