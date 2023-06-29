@@ -20,7 +20,7 @@ const Home = (props)  =>{
     const handleSearch = (e) => {
         e.preventDefault()
         if (!position) alert('hi')
-        position && history.push(`/hotels/${position?.value}`)
+        position && history.push(`/hotels/position?position=${position?.value}&dateFrom=${dateData[0]}&dateTo=${dateData[1]}`)
     }
 
     console.log('render')

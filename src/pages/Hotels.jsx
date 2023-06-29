@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import UserLayout from "../layouts/UserLayout";
 import {useGetHotelsByPositionQuery} from "../redux/api/rentalApi";
-import {useParams} from "react-router-dom";
 import SideBar from "../components/hotels/SideBar";
 import YandexMap from "../components/hotels/YandexMap";
 import {useDispatch} from "react-redux";
@@ -10,10 +9,9 @@ import Loader from "../components/ui/loader/Loader";
 import qs from "query-string";
 
 const Hotels = (props) => {
-    const {position} = useParams()
     const params = qs.parse(props.location.search, {ignoreQueryPrefix: true})
     // console.log(params)
-    const {data: hotelsData, isSuccess: hotelsSuccess, isFetching: hotelsFetching, isLoading: hotelsLoading} = useGetHotelsByPositionQuery({position: position})
+    const {data: hotelsData, isSuccess: hotelsSuccess, isFetching: hotelsFetching, isLoading: hotelsLoading} = useGetHotelsByPositionQuery({position: params.position, dateFrom: params.dateFrom, dateTo: params.dateTo})
     const dispatch = useDispatch()
 
     useEffect(() => {
