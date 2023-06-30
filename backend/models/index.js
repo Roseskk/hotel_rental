@@ -20,5 +20,6 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.hotels = require("./hotels.model.js")(sequelize, Sequelize);
+db.rooms = require("./rooms.model.js")(sequelize, Sequelize);
 
 module.exports = db;
