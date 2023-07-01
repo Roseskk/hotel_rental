@@ -4,7 +4,6 @@ import HotelCard from "../aside/HotelCard";
 
 const HotelsCards = () => {
     const rooms = useSelector((state) => state.rooms.rooms)
-
     return(
         <div className={'relative'}>
             <h1 className={'text-center text-[33px] font-primary'}>Номера</h1>
@@ -12,12 +11,12 @@ const HotelsCards = () => {
                 rooms === undefined
                     ? <div>Свободных номеров нет</div>
                     : <>
-                        <div className={'flex flex-wrap p-[20px] w-full justify-between font-primary text-default h-[90vh] overflow-y-scroll rounded'}>
+                        <div className={'flex flex-wrap p-[20px] gap-[20px] w-full justify-between font-primary text-default h-[90vh] overflow-y-scroll rounded'}>
                             {
-                                rooms?.rooms?.length !== 0 &&
-                                rooms?.rooms?.map(room => {
+                                rooms.length !== 0 &&
+                                rooms.map(room => {
                                     return(
-                                        <HotelCard key={room.roomId} room={room}  />
+                                        <HotelCard key={room.id} room={room}  />
                                     )
                                 })
                             }
