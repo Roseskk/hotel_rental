@@ -9,7 +9,7 @@ import Loader from "../components/ui/loader/Loader";
 
 const Rooms = () => {
     const {hotelId} = useParams()
-    const {data: hotelData, isSuccess: roomsSuccess, isFetching: roomsFetching, isLoading: roomsLoading} = useGetRoomsQuery(hotelId)
+    const {data: hotelData, isSuccess: roomsSuccess, isFetching: roomsFetching, isLoading: roomsLoading} = useGetRoomsQuery({hotelId: hotelId})
     const dispatch = useDispatch()
 
     useEffect(() => {
