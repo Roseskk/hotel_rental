@@ -8,8 +8,8 @@ import {useDispatch} from "react-redux";
 import {getRoom} from "../redux/slices/rooms";
 
 const Room = () => {
-    const {hotelId, roomId} = useParams()
-    const {data: roomData, isFetching: roomFetching, isLoading: roomLoading, isError: roomError} = useGetRoomQuery({hotelId: hotelId, roomId: roomId})
+    const {roomId} = useParams()
+    const {data: roomData, isFetching: roomFetching, isLoading: roomLoading, isError: roomError} = useGetRoomQuery({roomId: roomId})
 
     const dispatch = useDispatch()
 

@@ -17,9 +17,9 @@ const CommentsCarouselSection = () => {
                                 {
                                     comments &&
                                     comments.length !== 0 &&
-                                    comments.map(commentary => {
+                                    comments?.map(commentary => {
                                         return (
-                                            <Comment key={commentary.comment_id} comment={commentary} />
+                                            <Comment key={commentary?.id} comment={commentary} />
                                         )
                                     })
                                 }

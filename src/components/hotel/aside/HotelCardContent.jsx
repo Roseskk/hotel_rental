@@ -11,12 +11,11 @@ import {BiCopy} from "react-icons/bi";
 import {CopyToClipboard} from "react-copy-to-clipboard/src";
 
 const HotelCardContent = () => {
-    const {hotelId} = useParams()
     const dispatch = useDispatch()
     const history = useHistory()
 
     const data = useSelector((state) => state.rooms.room)
-    const {data: commentsData, isFetching: commentsFetching, isSuccess: commentsSuccess, isLoading: commentsLoading} = useGetCommentsByIdQuery({hotelId: hotelId, roomId: data?.room?.roomId})
+    const {data: commentsData, isFetching: commentsFetching, isSuccess: commentsSuccess, isLoading: commentsLoading} = useGetCommentsByIdQuery({roomId: data?.id})
 
     useEffect(() => {
         if (commentsSuccess) {
@@ -36,7 +35,7 @@ const HotelCardContent = () => {
                 </CopyToClipboard>
             </div>
             <h2 className={'text-white text-center text-title'}>Описание номера</h2>
-            <p className={'text-white font-primary h-[200px] overflow-y-scroll border border-white p-2 rounded-[15px]'}>{data?.room?.description}</p>
+            <p className={'text-white font-primary h-[200px] overflow-y-scroll border border-white p-2 rounded-[15px]'}>{data?.description}</p>
             {
                 commentsLoading
                 ? <Loader />
