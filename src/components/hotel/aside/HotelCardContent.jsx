@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Link, useParams, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import {useGetCommentsByIdQuery} from "../../../redux/api/commetsApi";
 import {useDispatch, useSelector} from "react-redux";
 import {getComments} from "../../../redux/slices/comments";
@@ -43,18 +43,18 @@ const HotelCardContent = () => {
             }
             <h2 className={'text-white text-center text-title'}>Расположение</h2>
             {
-                data?.coordinates &&
+                data?.hotel?.coordinates &&
                 <YMaps>
                     <Map
                         width={"100%"}
                         defaultState={{
                             center: [55.751574, 37.573856],
-                            zoom: 12,
+                            zoom: 13,
                         }}
                     >
                         <Placemark
                             modules={["geoObject.addon.balloon", "geoObject.addon.hint"]}
-                            geometry={[data?.coordinates?.longitude, data?.coordinates?.latitude]}
+                            geometry={[data?.hotel?.coordinates?.longitude, data?.hotel?.coordinates?.latitude]}
                         />
                     </Map>
                 </YMaps>

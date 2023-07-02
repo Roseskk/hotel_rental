@@ -17,23 +17,23 @@ router.get('/:hotelId',(req,res) => {
         .catch((err) => res.send(err))
 })
 
-router.get('/room/:roomId', (req,res) => {
+router.get('/room/:hotelId/:roomId', (req,res) => {
     Room.belongsTo(Hotel)
-    Hotel.belongsTo(Room)
+    Hotel.hasMany(Room)
     Room.findAll({
         where: {
             id: {
                 [Op.eq]: req.params.roomId
             }
         },
-        // include: [{
-        //     model: Hotel,
-        //     where: {
-        //         id: {
-        //             [Op.eq]: 1
-        //         },
-        //     }
-        // }]
+        include: [{
+            model: Hotel,
+            where: {
+                id: {
+                    [Op.eq]: req.params.hotelId
+                },
+            }
+        }]
     })
         .then((model) => res.json(model))
         .catch((err) => res.send(err))

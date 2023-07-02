@@ -16,9 +16,9 @@ export const roomsApi = createApi({
         }),
         getRoom: build.query({
             query: (arg) => {
-             const {roomId} = arg
+             const {hotelId,roomId} = arg
              return {
-                 url: `/rooms/room/${roomId}`,
+                 url: `/rooms/room/${hotelId}/${roomId}`,
                  method: 'GET'
              }
             },
