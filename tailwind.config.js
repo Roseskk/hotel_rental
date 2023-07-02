@@ -17,16 +17,20 @@ module.exports = {
             'secondary': '#dccbc1'
         },
         fontSize: {
-          'title': '32px',
-          'default': '18px',
-          'small': '15px',
+            'title': '32px',
+            'paragraph': '25px',
+            'default': '18px',
+            'small': '15px',
         },
         screens: {
             'desktop': '1700px',
-            'notebook': '1200px',
-            'tablet': '600px',
+            // 'notebook': '1200px',
+            'tablet': '1100px',
             'mobile': '992px',
         },
+        backgroundImage: {
+            'hero-pattern': "url('./assets/images/hotelOne.jpeg')",
+        }
     },
   },
   plugins: [],
