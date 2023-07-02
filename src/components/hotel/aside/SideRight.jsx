@@ -15,45 +15,45 @@ const SideRight = () => {
         <div className={`absolute font-primary p-[55px] rounded text-white flex flex-col justify-between font-primary gap-[10px] right-0 top-0 w-[33%] h-[90vh] overflow-y-scroll  bg-secondary transition duration-500 ease-in-out`}>
             <div>
                 <div className={'flex justify-between'}>
-                    <h2 className={'text-title'}>Номер: {data?.room?.type}</h2>
-                    <h2 className={'text-title'}>Цена: {data?.room?.cost}₽</h2>
+                    <h2 className={'text-title'}>Номер: {data?.type}</h2>
+                    <h2 className={'text-title'}>Цена: {data?.cost}₽</h2>
                 </div>
                 <div className={'w-full'}>
-                    <img className={'object-cover w-full h-auto rounded-[15px]'} src={data?.room?.image} />
+                    <img className={'object-cover w-full h-auto rounded-[15px]'} src={data?.image} />
                 </div>
                 <h2 className={'text-title text-center'}>Удобства номера</h2>
                 <div className={'flex flex-wrap justify-between'}>
                     <div className={'flex py-2 justify-center items-center gap-[10px] w-1/2'}>
                         <WifiIcon className={'w-[30px] h-[30px]'} />
-                        <span className={'text-default w-[200px]'}>{data?.room?.isWifi ? 'Присутвует WI-FI': 'Отсутвует WI-FI'}</span>
+                        <span className={'text-default w-[200px]'}>{data?.isWifi ? 'Присутвует WI-FI': 'Отсутвует WI-FI'}</span>
                     </div>
                     <div className={'flex py-2 justify-center items-center gap-[10px] w-1/2'}>
                         <IoFitnessOutline className={'w-[30px] h-[30px]'} />
-                        <span className={'text-default w-[200px]'}>{data?.room?.isFitness ? 'Присутвует спорт-зал': 'Отсутвует спорт-зал'}</span>
+                        <span className={'text-default w-[200px]'}>{data?.isFitness ? 'Присутвует спорт-зал': 'Отсутвует спорт-зал'}</span>
                     </div>
                     <div className={'flex py-2 justify-center items-center gap-[10px] w-1/2'}>
                         <FaBath className={'w-[30px] h-[30px]'} />
-                        <span className={'text-default w-[200px]'}>{data?.room?.isBathroom ? 'Присутвует ванная': 'Отсутвует ванная'}</span>
+                        <span className={'text-default w-[200px]'}>{data?.isBathroom ? 'Присутвует ванная': 'Отсутвует ванная'}</span>
                     </div>
                     <div className={'flex py-2 justify-center items-center gap-[10px] w-1/2'}>
                         <MdPool className={'w-[30px] h-[30px]'} />
-                        <span className={'text-default w-[200px]'}>{data?.room?.isPool ? 'Присутвует бассейн': 'Отсутвует бассейн'}</span>
+                        <span className={'text-default w-[200px]'}>{data?.isPool ? 'Присутвует бассейн': 'Отсутвует бассейн'}</span>
                     </div>
                     <div className={'flex py-2 justify-center items-center gap-[10px] w-1/2'}>
                         <FaCar className={'w-[30px] h-[30px]'} />
-                        <span className={'text-default w-[200px]'}>{data?.room?.isParking ? 'Присутвует стоянка': 'Отсутвует стоянка'}</span>
+                        <span className={'text-default w-[200px]'}>{data?.isParking ? 'Присутвует стоянка': 'Отсутвует стоянка'}</span>
                     </div>
                     <div className={'flex py-2 justify-center items-center gap-[10px] w-1/2'}>
                         <BsSafe2 className={'w-[30px] h-[30px]'} />
-                        <span className={'text-default w-[200px]'}>{data?.room?.isSafe ? 'Присутвует сейф': 'Отсутвует сейф'}</span>
+                        <span className={'text-default w-[200px]'}>{data?.isSafe ? 'Присутвует сейф': 'Отсутвует сейф'}</span>
                     </div>
                     <div className={'flex py-2 justify-center items-center gap-[10px] w-1/2'}>
                         <FaSmoking className={'w-[30px] h-[30px]'} />
-                        <span className={'text-default w-[200px]'}>{data?.room?.isSmoking ? 'Можно курить': 'Нельзя курить'}</span>
+                        <span className={'text-default w-[200px]'}>{data?.isSmoking ? 'Можно курить': 'Нельзя курить'}</span>
                     </div>
                     <div className={'flex py-2 justify-center items-center gap-[10px] w-1/2'}>
                         <TvIcon className={'w-[30px] h-[30px]'} />
-                        <span className={'text-default w-[200px]'}>{data?.room?.isTv ? 'Присутвует телевизор': 'Отсутвует телевизор'}</span>
+                        <span className={'text-default w-[200px]'}>{data?.isTv ? 'Присутвует телевизор': 'Отсутвует телевизор'}</span>
                     </div>
                 </div>
             </div>

@@ -3,17 +3,18 @@ import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 
 export const commentsApi = createApi({
     reducerPath: 'commentsApi',
-    baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:3000/api/'}),
+    baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:8080/api'}),
     endpoints: (build) => ({
         getCommentsById: build.query({
             query: (arg) =>{
-                const {hotelId, roomId} = arg
-                return {
-                    url: `comments/${hotelId}/${roomId}`,
-                    method: 'GET'
-                }
+                const {roomId} = arg
+                if (roomId !== undefined) {
+                    return {
+                        url: `/comments/${roomId}`,
+                        method: 'GET'
+                    }
+                } else return null
             },
-            transformResponse: (res) => res.comments[0]?.comments
         })
     })
 })

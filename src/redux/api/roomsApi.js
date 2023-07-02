@@ -16,12 +16,13 @@ export const roomsApi = createApi({
         }),
         getRoom: build.query({
             query: (arg) => {
-             const {hotelId, roomId} = arg
+             const {hotelId,roomId} = arg
              return {
-                 url: `rooms/${hotelId}/${roomId}`,
+                 url: `/rooms/room/${hotelId}/${roomId}`,
                  method: 'GET'
              }
-            }
+            },
+            transformResponse: (res) => res[0]
         })
     })
 })

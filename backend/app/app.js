@@ -4,6 +4,7 @@ const db = require("../models");
 const cors = require("cors");
 const hotelsRoute = require('./routes/hotels.routes')
 const roomsRoute = require('./routes/rooms.routes')
+const commentsRoute = require('./routes/comments.routes')
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.get("/", (req, res) => {
 
 app.use('/api/hotels', hotelsRoute)
 app.use('/api/rooms', roomsRoute)
+app.use('/api/comments', commentsRoute)
 
 // require("./routes/hotels.routes.js")(app);
 // set port, listen for requests
